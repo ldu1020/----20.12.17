@@ -46,6 +46,20 @@ const App: React.FC<Props> = ({ fetchContactList }) => {
 
         setContactList(res);
         setInitailContactList(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        const errData = [
+          {
+            name: '서버에 문제가 있습니다',
+            phoneNumber: '00000000000',
+            profileImage:
+              'https://storage.googleapis.com/snuper-static/mock_users/11.svg',
+            favorite: false,
+          },
+        ];
+        setContactList(errData);
+        setInitailContactList(errData);
       });
   }, [fetchContactList]);
 
