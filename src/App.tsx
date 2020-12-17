@@ -12,7 +12,7 @@ const StyledContanier = styled.section`
   border: 1px solid black;
   width: 375px;
   height: 667px;
-  padding: 15px 20px;
+  padding: 20px 15px;
 `;
 
 function App() {
