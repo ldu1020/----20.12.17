@@ -1,25 +1,27 @@
+/** @format */
+
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+
+import ContactList from './components/contact-list/contact-list';
+import Header from './components/header/header';
+import SearchBar from './components/search-bar/search-bar';
+
+const StyledContanier = styled.section`
+  margin: auto;
+  border: 1px solid black;
+  width: 375px;
+  height: 667px;
+  padding: 15px 20px;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledContanier>
+      <Header />
+      <SearchBar />
+      <ContactList />
+    </StyledContanier>
   );
 }
 
