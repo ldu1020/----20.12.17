@@ -10,7 +10,7 @@ build 폴더를 다운로드 하신 후, build 폴더의 index.html 을 실행�
 
 Component
 
-###### App :
+##### App :
 
 - props
   - fetchContactList: fetch 를 이용한 네트워크 통신함수 입니다. 컴포넌트의 함수 재생성의 영향을 받지 않도록, 또한 테스트의 용의성을 위해 외부에서 주입시키는 방식을 채택했습니다. 요청이 성공할시 결과를 객체로 변환하여 return하는 promise 함수를 return 합니다.
@@ -24,7 +24,7 @@ Component
   - search-bar
   - contact-list
 
-###### header : props 와 state를 가지고 있지 않습니다.
+##### header : props 와 state를 가지고 있지 않습니다.
 
 ##### search-bar :
 
@@ -35,7 +35,7 @@ Component
 
 출처: https://msparkms.tistory.com/entry/Markdown-문법-정리 [MSPark's Blog]
 
-###### contact-list :
+##### contact-list :
 
 - props
   - contactList: 사용자에게 보여지고, 상시 업데이트되는 연락처 data 목록입니다.
