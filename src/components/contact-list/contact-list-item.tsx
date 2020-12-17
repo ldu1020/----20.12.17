@@ -1,6 +1,7 @@
 /** @format */
 
 import React from 'react';
+
 import styled from 'styled-components';
 
 const emptyHeart =
@@ -59,7 +60,7 @@ const ContactListItem: React.FC<Props> = ({
       <ProfileImage src={profileImage} alt='profile' />
       <div>
         <Name>{name}</Name>
-        <PhoneNumber>{addHipen(phoneNumber)}</PhoneNumber>
+        <PhoneNumber>{addHyphen(phoneNumber)}</PhoneNumber>
       </div>
       <FavoritesBtn
         favorite={favorite!}
@@ -71,7 +72,7 @@ const ContactListItem: React.FC<Props> = ({
   );
 };
 
-function addHipen(phoneNumner: string) {
+function addHyphen(phoneNumner: string) {
   return (
     phoneNumner.substr(0, 3) +
     '-' +
@@ -81,4 +82,4 @@ function addHipen(phoneNumner: string) {
   );
 }
 
-export default ContactListItem;
+export default React.memo(ContactListItem);

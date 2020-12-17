@@ -44,4 +44,4 @@ const SearchBar: React.FC<Props> = ({ searchName }) => {
   );
 };
 
-export default SearchBar;
+export default React.memo(SearchBar);

@@ -2,19 +2,16 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import './index.css';
+
 import { fetchContactListAll } from './api/contact-list';
+import App from './App';
+import './index.css';
+
+//fetch 와 같은 네트워크와 통신하는 함수는 컴포넌트의 함수 재생성의 영향을 받지 않도록, 또한 테스트의 용의성을 위해 외부에서 주입시키는 방식을 채택했습니다.
 
 ReactDOM.render(
   <React.StrictMode>
-    <App fetchContextList={fetchContactListAll} />
+    <App fetchContactList={fetchContactListAll} />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

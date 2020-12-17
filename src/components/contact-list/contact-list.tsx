@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
+
 import ContactListItem from './contact-list-item';
 
 interface Props {
@@ -29,4 +30,4 @@ const ContactList: React.FC<Props> = ({ contactList, updateFavorite }) => {
   );
 };
 
-export default ContactList;
+export default React.memo(ContactList);
