@@ -31,11 +31,15 @@ const InputIcon = styled.img`
 const SearchIcon =
   'https://storage.googleapis.com/snuper-static/mock_users/search.svg';
 
-const SearchBar = () => {
+interface Props {
+  searchName: (e: any) => void;
+}
+
+const SearchBar: React.FC<Props> = ({ searchName }) => {
   return (
     <StyledForm>
       <InputIcon src={SearchIcon} />
-      <StyledInput placeholder='검색'></StyledInput>
+      <StyledInput placeholder='검색' onChange={searchName}></StyledInput>
     </StyledForm>
   );
 };

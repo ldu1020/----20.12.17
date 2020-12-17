@@ -5,10 +5,11 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import { fetchContactListAll } from './api/contact-list';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App fetchContextList={fetchContactListAll} />
   </React.StrictMode>,
   document.getElementById('root')
 );
