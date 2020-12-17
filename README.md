@@ -2,7 +2,7 @@
 
 ### 실행 방법
 
-build 폴더를 다운로드 하신 후, localhost:4000 의 서버가 실행중이라면 build 폴더의 index.html 을 실행하시면 됩니다 .
+build 폴더를 다운로드 하신 후, build 폴더의 index.html 을 실행하시면 됩니다.
 
 ### 코드 설명
 
