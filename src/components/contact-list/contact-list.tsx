@@ -10,14 +10,10 @@ interface Props {
   updateFavorite: (item: ContactListType) => void;
 }
 
-const StyledUl = styled.ul`
-  overflow-y: auto;
-`;
-
 const ContactList: React.FC<Props> = ({ contactList, updateFavorite }) => {
   return (
     <section>
-      <StyledUl>
+      <ul>
         {contactList.map((data) => (
           <ContactListItem
             key={data.phoneNumber}
@@ -25,7 +21,7 @@ const ContactList: React.FC<Props> = ({ contactList, updateFavorite }) => {
             updateFavorite={updateFavorite}
           />
         ))}
-      </StyledUl>
+      </ul>
     </section>
   );
 };
