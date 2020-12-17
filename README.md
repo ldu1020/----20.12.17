@@ -33,8 +33,6 @@ Component
 - <span style="color:orange">주의사항</span>
   - 예시로 제시해주신 input 의 background-color 인 #232323 이 본인의 노트북에서 글자판별이 불가능할 정도로 어둡게 나와서 google의 colorpicker 로 색상을 딴 #dfdfdf 로 변경하여 진행했습니다.
 
-출처: https://msparkms.tistory.com/entry/Markdown-문법-정리 [MSPark's Blog]
-
 ##### contact-list :
 
 - props
