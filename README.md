@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+<!-- @format -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 실행 방법
 
-## Available Scripts
+build 폴더를 다운로드 하신 후, localhost:4000 의 서버가 실행중이라면 build 폴더의 index.html 을 실행하시면 됩니다 .
 
-In the project directory, you can run:
+### 코드 설명
 
-### `yarn start`
+주요 기술스택: react, typescript, styled-componented
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+컴포넌트 :
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- App :
 
-### `yarn test`
+  - props
+    - fetchContactList: fetch 를 이용한 네트워크 통신함수 입니다. 컴포넌트의 함수 재생성의 영향을 받지 않도록, 또한 테스트의 용의성을 위해 외부에서 주입시키는 방식을 채택했습니다. 요청이 성공할시 결과를 객체로 변환하여 return하는 promise 함수를 return 합니다.
+  - state
+  - initailContactList : 초기화 및 데이터 검색을 위한 초기 데이터 목록입니다.
+  - contactList : 사용자 눈에 보여지는 상시 업데이트되는 데이터 목록입니다.
+  - side Effect
+    - useEffect를 이용해 처음 랜더링 될 시에만 prop으로 받아온 fetch 함수를 실행시키고 이름순으로 정렬합니다. 그후 만약 localStorage에 데이터가 있다면 정렬된 데이터를 업데이트한 후 state에 데이터를 저장하고 그렇지 않다면 업데이트를 하지 않고 저장합니다.
+  - 하위 컴포넌트
+  - header
+  - search-bar
+  - contact-list
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- header : props 와 state를 가지고 있지 않습니다.
 
-### `yarn build`
+- search-bar :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - props
+  - searchName: input의 change 이벤트를 받아 결과값을 App state의 initailContactList를 대상으로 필터링 한후 정렬하여 contactList를 업데이트 하는 함수입니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- contact-list :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - props
+    - contactList: 사용자에게 보여지고, 상시 업데이트되는 연락처 data 목록입니다.
+    - updateFavorite: 클릭 이벤트가 발생한 컴포넌트의 데이터를 받아 contactList 의 즐겨찾기와 localStroage 를 업데이트 하는 함수입니다.
+  - 하위 컴포넌트
+    - contact-list-item
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- contact-list-item :
+  - props
+    - contactListData: 해당 컴포넌트에 쓰일 연락처 data 객체입니다.
+    - updateFavorite: 상위 컴포넌트의 함수와 동일 함수 입니다.
