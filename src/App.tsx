@@ -68,10 +68,11 @@ const App: React.FC<Props> = ({ fetchContactList }) => {
     (item: ContactListType) => {
       const index = contactList?.indexOf(item);
       const updated = [...contactList!];
+
       item.favorite = !item.favorite;
       updated[index!] = item;
-
       const favoriteList = updated.filter((li) => li.favorite === true);
+
       localStorage.setItem('favoriteList', JSON.stringify(favoriteList));
       setContactList(updated);
     },
